@@ -1,0 +1,244 @@
+MyNotes on Git
+
+Installation:
+
+http://git-scm.com/download
+Version 1.8.1.2-preview20130201.exe downloaded
+
+Configuring users, creating new repo:
+Welcome to Git (version 1.8.1.2-preview20130201)
+
+
+Run 'git help git' to display the help index.
+Run 'git help <command>' to display help for specific commands.
+win7@WIN7-DELL ~
+$ git --version
+git version 1.8.1.msysgit.1
+win7@WIN7-DELL ~
+$ git help version
+Launching default browser to display HTML ...
+fatal: failed to launch browser for C:\Program Files (x86)\Git/doc/git/html//git
+version.html
+win7@WIN7-DELL ~
+$ git config --global user.name "Sivaraj"
+win7@WIN7-DELL ~
+$ git config --global user.email sivaraj.training@gmail.com
+win7@WIN7-DELL ~
+$ cat ~/.gitconfig
+[user]
+        name = Sivaraj
+        email = sivaraj.training@gmail.com
+win7@WIN7-DELL ~
+$ git config --global color.ui true
+win7@WIN7-DELL ~
+$ cat ~/.gitconfig
+[user]
+        name = Sivaraj
+        email = sivaraj.training@gmail.com
+[color]
+        ui = true
+win7@WIN7-DELL ~
+$ mkdir mycourseplans
+win7@WIN7-DELL ~
+$ cd my
+My Documents/  mycourseplans/
+win7@WIN7-DELL ~
+$ cd mycourseplans/
+win7@WIN7-DELL ~/mycourseplans
+$ git init
+Initialized empty Git repository in c:/Users/win7/mycourseplans/.git/
+win7@WIN7-DELL ~/mycourseplans (master)
+$ git status
+# On branch master
+#
+# Initial commit
+#
+nothing to commit (create/copy files and use "git add" to track)
+win7@WIN7-DELL ~/mycourseplans (master)
+$ touch index.html
+win7@WIN7-DELL ~/mycourseplans (master)
+$ ls
+index.html
+win7@WIN7-DELL ~/mycourseplans (master)
+$ git status
+# On branch master
+#
+# Initial commit
+#
+# Untracked files:
+#   (use "git add <file>..." to include in what will be committed)
+#
+#       index.html
+nothing added to commit but untracked files present (use "git add" to track)
+win7@WIN7-DELL ~/mycourseplans (master)
+$
+
+
+Basic Git Commands:
+
+win7@WIN7-DELL ~/mycourseplans (master)
+$ git clone https://github.com/kamens/jQuery-menu-aim.git
+Cloning into 'jQuery-menu-aim'...
+remote: Counting objects: 83, done.
+remote: Compressing objects: 100% (66/66), done.
+remote: Total 83 (delta 21), reused 77 (delta 15)
+Unpacking objects: 100% (83/83), done.
+win7@WIN7-DELL ~/mycourseplans (master)
+$ cd jQuery-menu-aim/
+win7@WIN7-DELL ~/mycourseplans/jQuery-menu-aim (master)
+$ ls
+README.md  amazon.png  example  example.png  jquery.menu-aim.js
+win7@WIN7-DELL ~/mycourseplans/jQuery-menu-aim (master)
+$ git log
+commit 16d40497ac80ae11a8960239ac63c7739952fd58
+Author: Ben Kamens <kamens@gmail.com>
+Date:   Sat Mar 9 12:37:54 2013 -0800
+
+    Add screenshot/notes about learning from example
+
+commit 2ad303834bdf76db11038d00c182e91ab1189568
+Author: Ben Kamens <ben@khanacademy.org>
+Date:   Sat Mar 9 12:39:08 2013 -0800
+
+    Add screenshot of new example page
+
+commit 0b1389e934dac238e80fa111b7a7e2ef399164af
+Author: Ben Kamens <kamens@gmail.com>
+Date:   Sat Mar 9 12:29:36 2013 -0800
+
+    Add note about example to readme
+
+commit c71e9fd7870eab73181091c0d1b01831686c782c
+Author: Ben Kamens <ben@khanacademy.org>
+Date:   Sat Mar 9 12:33:13 2013 -0800
+
+    Complete the working example HTML file for others to learn from
+
+commit 6531e9d0660b1480e395c73b03b327b82425dc3c
+Author: Ben Kamens <ben@khanacademy.org>
+Date:   Sat Mar 9 12:06:58 2013 -0800
+
+    Start of a working example using a bootstrap template
+
+commit 35181d5ddd9dc6baf21e646219daba1b50c440e2
+Author: Ben Kamens <ben@khanacademy.org>
+Date:   Sat Mar 9 10:52:02 2013 -0800
+
+    fix comment typo
+
+commit 0197dacc5d3204bd3aaa6791032cfb65b3b3731a
+Author: Ben Kamens <kamens@gmail.com>
+Date:   Wed Mar 6 02:12:44 2013 -0800
+
+    Update README.md
+
+commit 2e9115c97d3e756fe3f9988008f0f143ca318281
+Merge: fe91604 564ce01
+Author: Ben Kamens <ben@khanacademy.org>
+Date:   Mon Mar 4 20:21:31 2013 -0800
+
+    Merge branch 'master' of https://github.com/kamens/jQuery-menu-aim
+
+commit fe9160459bf5f5b7e96dc909b0077e70619b57ee
+Author: Ben Kamens <ben@khanacademy.org>
+Date:   Mon Mar 4 20:21:19 2013 -0800
+
+    lint fixes and explanatory comment about slope calculation
+
+commit 1b678639df135d667589d5744da4e46d342fa4d6
+Merge: c3c27fe 9d5d6aa
+Author: Ben Kamens <ben@khanacademy.org>
+Date:   Sun Mar 3 21:56:26 2013 -0800
+
+    Merge branch 'master' of https://github.com/kamens/jQuery-menu-aim
+
+commit c3c27fe06c465aa70f5e00fe47cbbd4fb1994f12
+Author: Ben Kamens <ben@khanacademy.org>
+Date:   Sun Mar 3 21:56:16 2013 -0800
+
+    Docstring typo and screenshot fix
+
+commit 564ce011f1e217f236ef3c8bd08bafd0511033f9
+Author: Ben Kamens <kamens@gmail.com>
+Date:   Sun Mar 3 21:53:34 2013 -0800
+
+    Add license note to README
+
+commit 9d5d6aafeb42e6d1be45475e481878a783020f17
+Author: Ben Kamens <kamens@gmail.com>
+Date:   Sun Mar 3 21:50:36 2013 -0800
+
+    Update README.md
+
+commit 45088fa4270a9f187d4f176bc16bc7a3b803323e
+Author: Ben Kamens <ben@khanacademy.org>
+Date:   Sun Mar 3 21:49:27 2013 -0800
+
+    Amazon screenshot for readme
+
+commit 98f9a4fffee6e1080daf72a9db3547a5c61312ec
+Author: Ben Kamens <ben@khanacademy.org>
+Date:   Sun Mar 3 21:39:11 2013 -0800
+
+    Get rid of incomplete example HTML file, will add it back when necessary
+
+    Get rid of incomplete example HTML file, will add it back when necessary
+
+commit d369662e5fb7a308aca07d27b9835ff3003d4468
+Author: Ben Kamens <ben@khanacademy.org>
+Date:   Sun Mar 3 20:51:50 2013 -0800
+
+    cleanup and docstrings
+
+commit 5db4fb07ad1d44490a266768485ebd8048295fb0
+Author: Ben Kamens <ben@khanacademy.org>
+Date:   Sun Mar 3 14:22:44 2013 -0800
+
+    More event trigger tweaking, start docstrings, fill in README
+
+commit 4018f1557d4d8af1b030f19ddeb59b67233c0cdf
+Author: Ben Kamens <ben@khanacademy.org>
+Date:   Sat Mar 2 18:56:35 2013 -0800
+
+    initial commit of plugin and test file
+
+commit 0df54e60617e08d8a6398b10afa615cd47138fce
+Author: Ben Kamens <kamens@gmail.com>
+Date:   Sat Mar 2 18:50:36 2013 -0800
+
+win7@WIN7-DELL ~/mycourseplans/jQuery-menu-aim (master)
+$ sublime README.md
+sh.exe": sublime: command not found
+win7@WIN7-DELL ~/mycourseplans/jQuery-menu-aim (master)
+$ notepad.exe  README.md
+win7@WIN7-DELL ~/mycourseplans/jQuery-menu-aim (master)
+$ notepad.exe  amazon.png
+.git/               amazon.png          example.png
+README.md           example/            jquery.menu-aim.js
+win7@WIN7-DELL ~/mycourseplans/jQuery-menu-aim (master)
+$ notepad.exe  amazon.png
+.git/               amazon.png          example.png
+README.md           example/            jquery.menu-aim.js
+win7@WIN7-DELL ~/mycourseplans/jQuery-menu-aim (master)
+$ git status
+# On branch master
+# Changes not staged for commit:
+#   (use "git add <file>..." to update what will be committed)
+#   (use "git checkout -- <file>..." to discard changes in working directory)
+#
+#       modified:   README.md
+#
+no changes added to commit (use "git add" and/or "git commit -a")
+win7@WIN7-DELL ~/mycourseplans/jQuery-menu-aim (master)
+$ git commit -a
+[master 40adc7b] Making some changes
+ 1 file changed, 3 insertions(+)
+win7@WIN7-DELL ~/mycourseplans/jQuery-menu-aim (master)
+$ git commit
+# On branch master
+# Your branch is ahead of 'origin/master' by 1 commit.
+#   (use "git push" to publish your local commits)
+#
+nothing to commit, working directory clean
+win7@WIN7-DELL ~/mycourseplans/jQuery-menu-aim (master)
+$
